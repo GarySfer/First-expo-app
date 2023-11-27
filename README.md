@@ -1,2 +1,2 @@
 # First-expo-app
-Build maker to Risk of Rain 2
+Item searcher to Risk of Rain 2
