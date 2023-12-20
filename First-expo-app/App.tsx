@@ -2,9 +2,11 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native'; 
 import { Searcher } from './components/Searcher';
-import { ItemList } from './components/ItemList';
+import { ItemPage } from './ItemPage';
 
 export default function App() {
+  
+
   return (
     <View style={styles.def}>
       <Text>bajo jajo</Text>
@@ -12,7 +14,7 @@ export default function App() {
         <Searcher></Searcher>
       </View>
       <View>
-        <ItemList></ItemList>
+        <ItemPage></ItemPage>
       </View>
     </View>
   );
