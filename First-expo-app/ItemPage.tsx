@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { View, ScrollView, Text, StyleSheet, Image } from 'react-native';
 import { ItemList } from './components/ItemList';
 import { getData } from './database';
 
@@ -37,8 +37,42 @@ export function ItemPage() {
 
     
     return (
+        <View style={styles.container}>
+      <ScrollView>
         <View>
-            <ItemList list={[]}></ItemList>
+          {items.map((item) => {
+            return (
+              <View style={styles.itemContainer}>
+                <Text style={styles.item}>{[item.itemName]}</Text>
+                <Image style={styles.itemImage} source={{uri: item.itemImage}} />
+              </View>
+            );
+          })}
         </View>
+      </ScrollView>
+    </View>
+
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingTop: 40,
+        alignItems: 'center',
+    },
+    item: {
+        padding: 10,
+        fontSize: 18,
+        height: 44,
+    },
+    itemImage: {
+        width: 50,
+        height: 50,
+    },
+    itemContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+});
