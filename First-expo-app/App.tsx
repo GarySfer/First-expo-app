@@ -1,8 +1,6 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native'; 
-import { Searcher } from './components/Searcher';
-import { ItemPage } from './ItemPage';
+import { Searcher } from './components/ItemPage';
 
 export default function App() {
   
@@ -14,7 +12,6 @@ export default function App() {
         <Searcher></Searcher>
       </View>
       <View>
-        <ItemPage></ItemPage>
       </View>
     </View>
   );
