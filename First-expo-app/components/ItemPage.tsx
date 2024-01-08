@@ -3,6 +3,8 @@ import { View } from 'react-native';
 import { TextInput, Searchbar } from 'react-native-paper';
 import { SearcherFilter } from './SearcherFilter';
 import { getData } from '../database';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '../App';
 
 export type Item = {
   _id: string;
@@ -20,21 +22,25 @@ export type ItemApiResponse = {
 };
 
 export const Searcher = () => {
+
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const [searchQuery, setSearchQuery] = React.useState('');
-  console.log(searchQuery);
 
   const [items, setItems] = React.useState<Item[]>([]);
 
   const getAllItems = async () => {
-          return getData();
+    return getData();
   };
 
   useEffect(() => {
     getAllItems().then((items) => {
-        setItems(items);
-        console.log(items);
+      setItems(items);
     });
-}, []);
+  }, []);
+
+  const handleItemPress = (item: Item) => {
+    navigation.navigate('ItemDescription', { item });
+  };
 
   return (
     <View>
@@ -42,7 +48,12 @@ export const Searcher = () => {
         value={searchQuery}
         onChangeText={(text) => setSearchQuery(text)}
         placeholder="Search" />
-      <SearcherFilter items={items} searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
-      </View>
+      <SearcherFilter
+        items={items}
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        onItemPress={handleItemPress}
+      />
+    </View>
   );
 };

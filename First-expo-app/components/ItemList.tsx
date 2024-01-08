@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Item } from '../ItemPage';
 import { Text, View } from 'react-native';
+import { Item } from './ItemPage';
 
 export function ItemList(props: {list: Item[]}) {
     return (

@@ -1,29 +1,31 @@
-import { View, Text, StyleSheet, FlatList, Image } from "react-native"
-import React from 'react'
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from "react-native";
+import React from 'react';
 
-
-export const SearcherFilter = ({items, searchQuery, setSearchQuery}) => {
+export const SearcherFilter = ({ items, searchQuery, setSearchQuery, onItemPress }) => {
     return (
         <View>
-            <FlatList data={items} renderItem={({ item }) => {
-                  if(searchQuery === "") {
-                    return (
-                        <View style={styles.itemContainer}>
-                        <Text style={styles.item}>{[item.itemName]}</Text>
-                        <Image style={styles.itemImage} source={{uri: item.itemImage}} />
-                      </View>
-                    )
-                  }
+            <FlatList
+                data={items}
+                renderItem={({ item }) => {
+                    if (searchQuery === "") {
+                        return (
+                            <TouchableOpacity style={styles.itemContainer} onPress={() => onItemPress(item)}>
+                                <Text style={styles.item}>{item.itemName}</Text>
+                                <Image style={styles.itemImage} source={{ uri: item.itemImage }} />
+                            </TouchableOpacity>
+                        )
+                    }
 
-                  if(item.itemName.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    return (
-                        <View style={styles.itemContainer}>
-                        <Text style={styles.item}>{[item.itemName]}</Text>
-                        <Image style={styles.itemImage} source={{uri: item.itemImage}} />
-                      </View>
-                    )
-                  }
-                }}/>
+                    if (item.itemName.toLowerCase().includes(searchQuery.toLowerCase())) {
+                        return (
+                            <TouchableOpacity style={styles.itemContainer} onPress={() => onItemPress(item)}>
+                                <Text style={styles.item}>{item.itemName}</Text>
+                                <Image style={styles.itemImage} source={{ uri: item.itemImage }} />
+                            </TouchableOpacity>
+                        )
+                    }
+                }}
+            />
         </View>
     )
 }
@@ -48,4 +50,4 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
-})
+});
