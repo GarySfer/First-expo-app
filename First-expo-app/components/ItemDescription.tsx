@@ -8,9 +8,9 @@ export const ItemDescription = ({ item }) => {
     return (<View>
       <Text>{item.itemName}</Text>
       <Text>{item.description}</Text>
-      <Text>{item.cooldown}</Text>
-      <Text>{item.stackType}</Text>
-      <Text>{item.rarity}</Text>
+      <Text>Cooldown: {item.cooldown}</Text>
+      <Text>Stack type: {item.stackType}</Text>
+      <Text>Rarity: {item.rarity}</Text>
       <Image style={styles.itemImage} source={{ uri: item.itemImage }}/>
     </View>);
 }
