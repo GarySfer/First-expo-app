@@ -3,9 +3,8 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 export const ItemDescription = ({ item }) => {
 
-    
-
-    return (<View>
+    return (
+    <View>
       <Text>{item.itemName}</Text>
       <Text>{item.description}</Text>
       <Text>Cooldown: {item.cooldown}</Text>
