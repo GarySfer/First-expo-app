@@ -12,4 +12,5 @@ Item wiki to Risk of Rain 2
 - react-native-paper
 - react-native-vector-icons
 - typescript
-
+- react-native-screens
+- react-native-safe-area-context
