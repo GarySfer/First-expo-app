@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { View } from 'react-native';
-import { TextInput, Searchbar } from 'react-native-paper';
+import { Searchbar } from 'react-native-paper';
 import { SearcherFilter } from './SearcherFilter';
 import { getData } from '../database';
 import { useNavigation, NavigationProp } from '@react-navigation/native';

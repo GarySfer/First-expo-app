@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native'; 
-import { Item, Searcher } from './components/ItemPage';
+import { Item } from './components/ItemPage';
 import { NavigationContainer } from '@react-navigation/native';
-import {NativeStackScreenProps, createNativeStackNavigator} from '@react-navigation/native-stack';
+import { createNativeStackNavigator} from '@react-navigation/native-stack';
 import { HomeScreen } from './routes/HomeScreen';
 import { DetailsScreen } from './routes/DetailsScreen';
 
