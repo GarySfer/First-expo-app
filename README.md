@@ -6,7 +6,7 @@ Item wiki to Risk of Rain 2
 - Install dependencies
 - ExpoGo mobile app
 
-**Dependencied:**
+**Dependencies:**
 - @types/react
 - react-native
 - react-native-paper
